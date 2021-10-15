@@ -10,16 +10,20 @@
     <link rel="stylesheet" href="/css/mystyle.css"/>
     
     <style>
-      @media (min-width: 576px) {
-        .row-cols-sm-2 > .col-width2 { width: 100%; }
+      @media (min-width: 0px) {
+        .row-cols-2 > .col-width2 { width: 100%; }
       }
       
       @media (min-width: 768px) {
         .row-cols-md-3 > .col-width2 { width: 66.6666666667%; }
       }
       
-      @media (min-width: 1200px) {
-        .row-cols-xl-4 > .col-width2 { width: 50%; }
+      @media (min-width: 992px) {
+        .row-cols-lg-4 > .col-width2 { width: 50%; }
+      }
+      
+      @media (min-width: 1400px) {
+        .row-cols-xxl-5 > .col-width2 { width: 40%; }
       }
       
       .gallery {
@@ -84,7 +88,7 @@
       <h1 class="mt-5">Галерея</h1>
       
       <div class="my-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4" data-masonry='{ "itemSelector": ".col" }' style="--bs-gutter-x: 0.75rem; --bs-gutter-y: 0.75rem;">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5" data-masonry='{ "itemSelector": ".col" }' style="--bs-gutter-x: 0.75rem; --bs-gutter-y: 0.75rem;">
           <!--div class="col">
             <a href="IMG-YYYYYYYY-VKXX.jpg" target="_blank">
               <div class="gallery">
