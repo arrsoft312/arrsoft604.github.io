@@ -32,144 +32,95 @@
   </head>
   
   <body>
-    <!--LiveInternet counter-->
-      <script>
-        new Image().src = "https://counter.yadro.ru/hit?t50.2;r"+escape(document.referrer)+";u"+escape(document.URL)+";"+Math.random();
-      </script>
-    <!--/LiveInternet-->
+    <script>
+      const news = [
+        //[ 'heading', 'datetime', 'body', ],
+        [
+          'image2gcode v3.1.3: улучшенный предпросмотр',
+          '2021-12-26',
+          'Маленькое обновление делающее работу с программой более комфортной. Теперь картинку в окне предпросмотра можно увеличить или уменьшить только на целые числа. Т.е. можно увеличить в два или три раза, но не в полтора. Также при масштабировании учитывается куда смотрит курсор мыши. При увеличении нету сглаживания - каждый пиксель квадратный и на своем месте. И ускорена прорисовка картинок в целом, особенно заметно на огромных изображениях.',
+          'В общем теперь окно предпросмотра как в графических редакторах.',
+          '<a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.3" class="text-reset" target="_blank">Скачать исходный код и программу этой версии с GitHub</a>',
+        ],
+        [
+          'image2gcode v3.1.2: отправка g-кода на контроллер',
+          '2021-12-23',
+          '<b>image2gcode</b> v3.1.2 доступна для загрузки. Реализована долгожданная функция отправки g-кода на контроллер прямо из программы. Новое окно конфигурации контроллера - удалены все пункты которые относились к GRBL. Три новых языка интерфейса: венгерский, румынский и испанский. Также теперь при выборе другого графика в меню Пресет, вместе с графиком будут меняться скорости на черном и белом оттенках.',
+          'А еще эта версия программы может работать и на Windows XP.',
+          '<a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.2" class="text-reset" target="_blank">Скачать исходный код и программу этой версии с GitHub</a>',
+        ],
+        [
+          'image2gcode v3.1.1: pre-release',
+          '2021-10-04',
+          '<b>image2gcode</b> v3.1.1 доступна для загрузки. На данный момент программа может генерировать g-код для лазерных и нихромовых выжигателей. Также доступно изменение настроек контроллера.',
+          'Отправка g-кода на контроллер прямо из программы будет добавлена в следующей версии.',
+          '<a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.1" class="text-reset" target="_blank">Скачать исходный код и программу этой версии с GitHub</a>',
+        ],
+        [
+          'Репозиторий программы image2gcode на GitHub',
+          '2021-09-22',
+          'Исходный код программы <b>image2gcode</b> доступен на веб-сервисе GitHub: <a href="https://github.com/arrsoft312/image-to-gcode" class="text-reset" target="_blank">https://github.com/arrsoft312/image-to-gcode</a>',
+        ],
+        [
+          'У программы image2gcode появился веб-сайт: image2gcode.ru',
+          '2021-09-07',
+          'Теперь у программы <b>image2gcode</b> есть свой веб-сайт в Интернете: <a href="https://www.image2gcode.ru/" class="text-reset" target="_blank">https://www.image2gcode.ru</a>',
+          'Сама программа для скачивания будет доступна позже. А сейчас вы можете помочь мне в заполнении страниц <a href="/faq/" class="text-reset">ЧаВо</a> и <a href="/album/" class="text-reset">Галерея</a>',
+        ],
+      ];
+    </script>
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-lg">
-        <a class="navbar-brand py-0" href="/"><img src="/images/logo.png" class="d-block" alt="image2gcode" height="36"/></a>
-        
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false">
+        <a class="navbar-brand py-0" href="/">
+          <img src="/images/logo.png" class="d-inline-block" alt="image2gcode" width="36" height="36"/>
+          <span class="d-none d-sm-inline-block align-middle">image2gcode</span>
+        </a>
+        <div class="navbar-nav flex-row">
+          <a class="nav-link px-2" href="/features/">Возможности</a>
+          <a class="nav-link px-2 d-lg-none" href="/download/">Скачать</a>
+        </div>
+        <button class="navbar-toggler ms-auto collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
-          <div class="navbar-nav">
-            <!--a class="nav-link" href="/">Главная</a-->
-            <a class="nav-link" href="/features/">Функции</a>
-            <a class="nav-link" href="/download/">Скачать</a>
-            <a class="nav-link active" aria-current="page" href="/news/">Новости</a>
-            <!--a class="nav-link" href="/faq/">ЧаВо</a-->
-            <a class="nav-link" href="/album/">Галерея</a>
-            <!--a class="nav-link" href="/kaskade/">КАСКАД</a-->
-            <a class="nav-link" href="/donate/">Поддержать рублем</a>
-            <a class="nav-link" href="/author/">Автор</a>
+          <div class="navbar-nav flex-row flex-wrap">
+            <!--a class="nav-link px-2 col-6 col-md-auto" href="/">Главная</a-->
+            <a class="nav-link px-2 col-6 col-md-auto active" aria-current="page" href="/news/">Новости</a>
+            <!--a class="nav-link px-2 col-6 col-md-auto" href="/faq/">ЧаВо</a-->
+            <a class="nav-link px-2 col-6 col-md-auto" href="/album/">Галерея</a>
+            <a class="nav-link px-2 col-6 col-md-auto" href="/donate/">Поддержать рублем</a>
+            <a class="nav-link px-2 col-6 col-md-auto" href="/author/">Автор</a>
           </div>
         </div>
+        <a class="btn btn-outline-warning d-none d-lg-inline-block" href="/download/" style="font-weight: 600;">Скачать</a>
       </div>
     </nav>
     
     <main class="container-lg fs-5">
       <h1 class="mt-5">Новости</h1>
       
-      <div class="my-5 accordion accordion-flush" id="accordionExample">
-        <!--div class="accordion-item">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXX" aria-expanded="true" aria-controls="collapseXX">
-            <h4 class="accordion-header bi-bookmark-star" id="headingXX"> heading </h4>
-          </button>
-          <div id="collapseXX" class="accordion-collapse collapse show" aria-labelledby="headingXX">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>datetime</p>
-              <p>body</p>
-            </div>
-          </div>
-        </div-->
-        
-        <!--div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseYY" aria-expanded="false" aria-controls="collapseYY">
-            <h4 class="accordion-header bi-bookmark" id="headingYY"> heading </h4>
-          </button>
-          <div id="collapseYY" class="accordion-collapse collapse" aria-labelledby="headingYY">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>datetime</p>
-              <p>body</p>
-            </div>
-          </div>
-        </div-->
-        
-        <div class="accordion-item">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse05" aria-expanded="true" aria-controls="collapse05">
-            <h4 class="accordion-header bi-bookmark-star" id="heading05"> image2gcode v3.1.3: улучшенный предпросмотр </h4>
-          </button>
-          <div id="collapse05" class="accordion-collapse collapse show" aria-labelledby="heading05">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>2021-12-26</p>
-              <p>Маленькое обновление делающее работу с программой более комфортной. Теперь картинку в окне предпросмотра можно
-                увеличить или уменьшить только на целые числа. Т.е. можно увеличить в два или три раза, но не в полтора. Также
-                при масштабировании учитывается куда смотрит курсор мыши. При увеличении нету сглаживания - каждый пиксель квадратный
-                и на своем месте. И ускорена прорисовка картинок в целом, особенно заметно на огромных изображениях.</p>
-              <p>В общем теперь окно предпросмотра как в графических редакторах.</p>
-              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.3" class="text-reset" target="_blank">Скачать
-                исходный код и программу этой версии с GitHub</a></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse04" aria-expanded="false" aria-controls="collapse04">
-            <h4 class="accordion-header bi-bookmark" id="heading04"> image2gcode v3.1.2: отправка g-кода на контроллер </h4>
-          </button>
-          <div id="collapse04" class="accordion-collapse collapse" aria-labelledby="heading04">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>2021-12-23</p>
-              <p><b>image2gcode</b> v3.1.2 доступна для загрузки. Реализована долгожданная функция отправки g-кода на контроллер
-                прямо из программы. Новое окно конфигурации контроллера - удалены все пункты которые относились к GRBL. Три новых
-                языка интерфейса: венгерский, румынский и испанский. Также теперь при выборе другого графика в меню Пресет, вместе
-                с графиком будут меняться скорости на черном и белом оттенках.</p>
-              <p>А еще эта версия программы может работать и на Windows XP.</p>
-              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.2" class="text-reset" target="_blank">Скачать
-                исходный код и программу этой версии с GitHub</a></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse03" aria-expanded="false" aria-controls="collapse03">
-            <h4 class="accordion-header bi-bookmark" id="heading03"> image2gcode v3.1.1: pre-release </h4>
-          </button>
-          <div id="collapse03" class="accordion-collapse collapse" aria-labelledby="heading03">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>2021-10-04</p>
-              <p><b>image2gcode</b> v3.1.1 доступна для загрузки. На данный момент программа может генерировать g-код для лазерных
-                и нихромовых выжигателей. Также доступно изменение настроек контроллера.</p>
-              <p>Отправка g-кода на контроллер прямо из программы будет добавлена в следующей версии.</p>
-              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.1" class="text-reset" target="_blank">Скачать
-                исходный код и программу этой версии с GitHub</a></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse02" aria-expanded="false" aria-controls="collapse02">
-            <h4 class="accordion-header bi-bookmark" id="heading02"> Репозиторий программы image2gcode на GitHub </h4>
-          </button>
-          <div id="collapse02" class="accordion-collapse collapse" aria-labelledby="heading02">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>2021-09-22</p>
-              <p>Исходный код программы <b>image2gcode</b> доступен на веб-сервисе GitHub:
-                <a href="https://github.com/arrsoft312/image-to-gcode" class="text-reset" target="_blank">https://github.com/arrsoft312/image-to-gcode</a></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse01" aria-expanded="false" aria-controls="collapse01">
-            <h4 class="accordion-header bi-bookmark" id="heading01"> У программы image2gcode появился веб-сайт: image2gcode.ru </h4>
-          </button>
-          <div id="collapse01" class="accordion-collapse collapse" aria-labelledby="heading01">
-            <div class="accordion-body py-0 mt-3 mb-5">
-              <p>2021-09-07</p>
-              <p>Теперь у программы <b>image2gcode</b> есть свой веб-сайт в Интернете:
-                <a href="https://www.image2gcode.ru/" class="text-reset" target="_blank">https://www.image2gcode.ru</a></p>
-              <p>Сама программа для скачивания будет доступна позже. А сейчас вы можете помочь мне в заполнении страниц
-                <a href="/faq/" class="text-reset">ЧаВо</a> и <a href="/album/" class="text-reset">Галерея</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="my-5 accordion accordion-flush" id="accordionExample"></div>
     </main>
+    
+    <script>
+      const obj = document.getElementById('accordionExample');
+      news.forEach((value, index) => {
+        let s = '<div class="accordion-item">';
+        s += '<button class="accordion-button' + (index != 0 ? ' collapsed' : '') + '" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + index + '" aria-expanded="' + (index == 0) + '" aria-controls="collapse' + index + '">';
+        s += '<h4 class="accordion-header bi-bookmark' + (index == 0 ? '-star' : '') + '" id="heading' + index + '"> ' + value[0] + ' </h4>';
+        s += '</button>';
+        s += '<div id="collapse' + index + '" class="accordion-collapse collapse' + (index == 0 ? ' show' : '') + '" aria-labelledby="heading' + index + '">';
+        s += '<div class="accordion-body py-0 mt-3 mb-5">';
+        for (let i = 1, j = value.length; i < j; ++i) {
+          s += '<p>' + value[i] + '</p>';
+        }
+        s += '</div>';
+        s += '</div>';
+        s += '</div>';
+        obj.innerHTML += s;
+      });
+    </script>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.js" crossorigin="anonymous"></script>

@@ -5,37 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Artur Kurpukov"/>
     <meta name="theme-color" content="#212529"/>
-    <title>Функции - image2gcode</title>
+    <title>Возможности - image2gcode</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.css" crossorigin="anonymous"/>
   </head>
   
   <body>
-    <!--LiveInternet counter-->
-      <script>
-        new Image().src = "https://counter.yadro.ru/hit?t50.2;r"+escape(document.referrer)+";u"+escape(document.URL)+";"+Math.random();
-      </script>
-    <!--/LiveInternet-->
+    <script>
+      const features = [
+        //[ 'heading', 'body', ],
+        [ 'Графический редактор', 'Базовые функции для редактирования картинки: яркость, контраст, инверсия, поворот/отражение и т.д.', ],
+        [ 'Изменение размера', 'Картинка не помещается на заготовку? Программа позволяет изменить размер картинки, или повернуть ее.', ],
+        [ 'Выжигание в 1-битном режиме', 'Конвертирование картинки в черно-белую с использованием дизеринга.', ],
+        [ 'Выжигание с оттенками', 'Получение оттенков путем нелинейного изменения скорости/мощности.', ],
+        [ 'Нету переженных краев', 'Программа добавляет поля для разгона и торможения каретки при выжигании лазером.', ],
+        [ 'Настраиваемая очистка жала', 'Можно указать как часто нужно чистить жало, скорость очистки и сколько циклов.', ],
+        [ 'Обход по контуру', 'Обход рабочей области картинки перед началом выжигания.', ],
+        [ 'Поворотная ось', 'Гравировка на цилиндрических заготовках, картинку можно обернуть как по оси Y, так и по X.', ],
+        [ 'Предпросмотр результата', 'Предпросмотр результата на материале. Можно добавить свои текстуры фанеры, дерева, гранита и т.д.', ],
+        [ 'Время выполнения', 'Расчет приблизительного времени выполнения работы и площади выжигания.', ],
+      ];
+    </script>
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-lg">
-        <a class="navbar-brand py-0" href="/"><img src="/images/logo.png" class="d-block" alt="image2gcode" height="36"/></a>
-        
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false">
+        <a class="navbar-brand py-0" href="/">
+          <img src="/images/logo.png" class="d-inline-block" alt="image2gcode" width="36" height="36"/>
+          <span class="d-none d-sm-inline-block align-middle">image2gcode</span>
+        </a>
+        <div class="navbar-nav flex-row">
+          <a class="nav-link px-2 active" aria-current="page" href="/features/">Возможности</a>
+          <a class="nav-link px-2 d-lg-none" href="/download/">Скачать</a>
+        </div>
+        <button class="navbar-toggler ms-auto collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
-          <div class="navbar-nav">
-            <!--a class="nav-link" href="/">Главная</a-->
-            <a class="nav-link active" aria-current="page" href="/features/">Функции</a>
-            <a class="nav-link" href="/download/">Скачать</a>
-            <a class="nav-link" href="/news/">Новости</a>
-            <!--a class="nav-link" href="/faq/">ЧаВо</a-->
-            <a class="nav-link" href="/album/">Галерея</a>
-            <!--a class="nav-link" href="/kaskade/">КАСКАД</a-->
-            <a class="nav-link" href="/donate/">Поддержать рублем</a>
-            <a class="nav-link" href="/author/">Автор</a>
+          <div class="navbar-nav flex-row flex-wrap">
+            <!--a class="nav-link px-2 col-6 col-md-auto" href="/">Главная</a-->
+            <a class="nav-link px-2 col-6 col-md-auto" href="/news/">Новости</a>
+            <!--a class="nav-link px-2 col-6 col-md-auto" href="/faq/">ЧаВо</a-->
+            <a class="nav-link px-2 col-6 col-md-auto" href="/album/">Галерея</a>
+            <a class="nav-link px-2 col-6 col-md-auto" href="/donate/">Поддержать рублем</a>
+            <a class="nav-link px-2 col-6 col-md-auto" href="/author/">Автор</a>
           </div>
         </div>
+        <a class="btn btn-outline-warning d-none d-lg-inline-block" href="/download/" style="font-weight: 600;">Скачать</a>
       </div>
     </nav>
     
@@ -46,122 +60,29 @@
     </svg>
     
     <main class="container-lg fs-5">
-      <h1 class="mt-5">Функции</h1>
+      <h1 class="mt-5">Возможности</h1>
       
       <div class="my-5">
-        <div class="row row-cols-1 row-cols-lg-2 gy-5">
-          <!--div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">heading</h3>
-              <p class="mb-0">body</p>
-            </div>
-          </div-->
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Графический редактор</h3>
-              <p class="mb-0">Базовые функции для редактирования картинки: яркость, контраст, инверсия, поворот/отражение и т.д.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Изменение размера</h3>
-              <p class="mb-0">Картинка не помещается на заготовку? Программа позволяет изменить размер картинки, или повернуть ее.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Выжигание в 1-битном режиме</h3>
-              <p class="mb-0">Конвертирование картинки в черно-белую с использованием дизеринга.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Выжигание с оттенками</h3>
-              <p class="mb-0">Получение оттенков путем нелинейного изменения скорости/мощности.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Нету переженных краев</h3>
-              <p class="mb-0">Программа добавляет поля для разгона и торможения каретки при выжигании лазером.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Настраиваемая очистка жала</h3>
-              <p class="mb-0">Можно указать как часто нужно чистить жало, скорость очистки и сколько циклов.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Обход по контуру</h3>
-              <p class="mb-0">Обход рабочей области картинки перед началом выжигания.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Поворотная ось</h3>
-              <p class="mb-0">Гравировка на цилиндрических заготовках, картинку можно обернуть как по оси Y, так и по X.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Предпросмотр результата</h3>
-              <p class="mb-0">Предпросмотр результата на материале. Можно добавить свои текстуры фанеры, дерева, гранита и т.д.</p>
-            </div>
-          </div>
-          
-          <div class="col d-flex">
-            <svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">
-              <use xlink:href="#bookmark-fill"/>
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-1">Время выполнения</h3>
-              <p class="mb-0">Расчет приблизительного времени выполнения работы и площади выжигания.</p>
-            </div>
-          </div>
-        </div>
+        <div class="row row-cols-1 row-cols-lg-2 gy-5" id="demo"></div>
       </div>
     </main>
+    
+    <script>
+      const obj = document.getElementById('demo');
+      features.forEach((value, index) => {
+        obj.innerHTML += (
+          '<div class="col d-flex">'+
+          '<svg class="flex-shrink-0 me-2" width="1.75em" height="1.75em" fill="currentColor">'+
+          '<use xlink:href="#bookmark-fill"/>'+
+          '</svg>'+
+          '<div>'+
+          '<h3 class="fw-bold mb-1">' + value[0] + '</h3>'+
+          '<p class="mb-0">' + value[1] + '</p>'+
+          '</div>'+
+          '</div>'
+        );
+      });
+    </script>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.js" crossorigin="anonymous"></script>
