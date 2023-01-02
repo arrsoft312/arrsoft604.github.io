@@ -32,44 +32,6 @@
   </head>
   
   <body>
-    <script>
-      const news = [
-        //[ 'heading', 'datetime', 'body', ],
-        [
-          'image2gcode v3.1.3: улучшенный предпросмотр',
-          '2021-12-26',
-          'Маленькое обновление делающее работу с программой более комфортной. Теперь картинку в окне предпросмотра можно увеличить или уменьшить только на целые числа. Т.е. можно увеличить в два или три раза, но не в полтора. Также при масштабировании учитывается куда смотрит курсор мыши. При увеличении нету сглаживания - каждый пиксель квадратный и на своем месте. И ускорена прорисовка картинок в целом, особенно заметно на огромных изображениях.',
-          'В общем теперь окно предпросмотра как в графических редакторах.',
-          '<a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.3" class="text-reset" target="_blank">Скачать исходный код и программу этой версии с GitHub</a>',
-        ],
-        [
-          'image2gcode v3.1.2: отправка g-кода на контроллер',
-          '2021-12-23',
-          '<b>image2gcode</b> v3.1.2 доступна для загрузки. Реализована долгожданная функция отправки g-кода на контроллер прямо из программы. Новое окно конфигурации контроллера - удалены все пункты которые относились к GRBL. Три новых языка интерфейса: венгерский, румынский и испанский. Также теперь при выборе другого графика в меню Пресет, вместе с графиком будут меняться скорости на черном и белом оттенках.',
-          'А еще эта версия программы может работать и на Windows XP.',
-          '<a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.2" class="text-reset" target="_blank">Скачать исходный код и программу этой версии с GitHub</a>',
-        ],
-        [
-          'image2gcode v3.1.1: pre-release',
-          '2021-10-04',
-          '<b>image2gcode</b> v3.1.1 доступна для загрузки. На данный момент программа может генерировать g-код для лазерных и нихромовых выжигателей. Также доступно изменение настроек контроллера.',
-          'Отправка g-кода на контроллер прямо из программы будет добавлена в следующей версии.',
-          '<a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.1" class="text-reset" target="_blank">Скачать исходный код и программу этой версии с GitHub</a>',
-        ],
-        [
-          'Репозиторий программы image2gcode на GitHub',
-          '2021-09-22',
-          'Исходный код программы <b>image2gcode</b> доступен на веб-сервисе GitHub: <a href="https://github.com/arrsoft312/image-to-gcode" class="text-reset" target="_blank">https://github.com/arrsoft312/image-to-gcode</a>',
-        ],
-        [
-          'У программы image2gcode появился веб-сайт: image2gcode.ru',
-          '2021-09-07',
-          'Теперь у программы <b>image2gcode</b> есть свой веб-сайт в Интернете: <a href="https://www.image2gcode.ru/" class="text-reset" target="_blank">https://www.image2gcode.ru</a>',
-          'Сама программа для скачивания будет доступна позже. А сейчас вы можете помочь мне в заполнении страниц <a href="/faq/" class="text-reset">ЧаВо</a> и <a href="/album/" class="text-reset">Галерея</a>',
-        ],
-      ];
-    </script>
-    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-lg">
         <a class="navbar-brand py-0" href="/">
@@ -98,27 +60,134 @@
     <main class="container-lg fs-5">
       <h1 class="mt-5">Новости</h1>
       
-      <div class="my-5 accordion accordion-flush" id="accordionExample"></div>
+      <div class="my-5 accordion accordion-flush" id="accordionExample">
+        <!--div class="accordion-item">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXX" aria-expanded="true" aria-controls="collapseXX">
+            <h4 class="accordion-header bi-bookmark-star" id="headingXX"> heading </h4>
+          </button>
+          <div id="collapseXX" class="accordion-collapse collapse show" aria-labelledby="headingXX">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>datetime</p>
+              <p>body</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXX" aria-expanded="false" aria-controls="collapseXX">
+            <h4 class="accordion-header bi-bookmark" id="headingXX"> heading </h4>
+          </button>
+          <div id="collapseXX" class="accordion-collapse collapse" aria-labelledby="headingXX">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>datetime</p>
+              <p>body</p>
+            </div>
+          </div>
+        </div-->
+        
+        <div class="accordion-item">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse05" aria-expanded="true" aria-controls="collapse05">
+            <h4 class="accordion-header bi-bookmark-star" id="heading05"> image2gcode v3.2.0: с Новым Годом нас! </h4>
+          </button>
+          <div id="collapse05" class="accordion-collapse collapse show" aria-labelledby="heading05">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>2023-01-02</p>
+              <p>С предыдущего релиза программы <b>image2gcode</b> прошел почти год. В этой версии я удалил ненужные параметры генерации G-кода,
+                а часть перенесена в меню Пресет. Кнопки поворота и отражения картинки перенесены в меню Изображение. Предпросмотр результата
+                на метериале я посчитал совсем бесполезным, и удалил эту функцию из программы. Обход рабочей области перед началом выжигания
+                тоже удален: эта функция была полезная, но насчет ее у меня другие планы. Картинки теперь начинают выжигаться из левого верхнего
+                угла, и есть опция для выжигания снизу вверх, она будет полезна на граверах по камню. При выжигании нихромом, полоса очистки
+                теперь всегда будет расположена в нулевой точке, или слева картинки, т.е. теперь можно будет указать отступ от полосы очистки,
+                раньше этого было сделать нельзя. Параметры генерации G-кода для поворотной оси перенес на правую панель - дуратское окно, в
+                котором в большинстве случаев нужно было указать параметры только один раз, удалено! Также изменил шрифт интерфейса, с устаревшего,
+                который было принято использовать на Windows XP, на современный, который принято использовать начиная с Windows 7.</p>
+              <p>В общем, решил сделать эту версию продолжением версии 2.5, которая вам всем до сих пор очень нравится.</p>
+              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.2.0" class="text-reset" target="_blank">Скачать исходный код
+                и программу этой версии с GitHub</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse04" aria-expanded="false" aria-controls="collapse04">
+            <h4 class="accordion-header bi-bookmark" id="heading04"> image2gcode v3.1.3: улучшенный предпросмотр </h4>
+          </button>
+          <div id="collapse04" class="accordion-collapse collapse" aria-labelledby="heading04">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>2021-12-26</p>
+              <p>Маленькое обновление делающее работу с программой более комфортной. Теперь картинку в окне предпросмотра можно увеличить или уменьшить
+                только на целые числа. Т.е. можно увеличить в два или три раза, но не в полтора. Также при масштабировании учитывается куда смотрит
+                курсор мыши. При увеличении нету сглаживания - каждый пиксель квадратный и на своем месте. И ускорена прорисовка картинок в целом,
+                особенно заметно на огромных изображениях.</p>
+              <p>В общем теперь окно предпросмотра как в графических редакторах.</p>
+              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.3" class="text-reset" target="_blank">Скачать исходный код
+                и программу этой версии с GitHub</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse03" aria-expanded="false" aria-controls="collapse03">
+            <h4 class="accordion-header bi-bookmark" id="heading03"> image2gcode v3.1.2: отправка g-кода на контроллер </h4>
+          </button>
+          <div id="collapse03" class="accordion-collapse collapse" aria-labelledby="heading03">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>2021-12-23</p>
+              <p><b>image2gcode</b> v3.1.2 доступна для загрузки. Реализована долгожданная функция отправки g-кода на контроллер прямо из программы.
+                Новое окно конфигурации контроллера - удалены все пункты которые относились к GRBL. Три новых языка интерфейса: венгерский, румынский
+                и испанский. Также теперь при выборе другого графика в меню Пресет, вместе с графиком будут меняться скорости на черном и белом оттенках.</p>
+              <p>А еще эта версия программы может работать и на Windows XP.</p>
+              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.2" class="text-reset" target="_blank">Скачать исходный код
+                и программу этой версии с GitHub</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse02" aria-expanded="false" aria-controls="collapse02">
+            <h4 class="accordion-header bi-bookmark" id="heading02"> image2gcode v3.1.1: pre-release </h4>
+          </button>
+          <div id="collapse02" class="accordion-collapse collapse" aria-labelledby="heading02">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>2021-10-04</p>
+              <p><b>image2gcode</b> v3.1.1 доступна для загрузки. На данный момент программа может генерировать g-код для лазерных и нихромовых
+                выжигателей. Также доступно изменение настроек контроллера.</p>
+              <p>Отправка g-кода на контроллер прямо из программы будет добавлена в следующей версии.</p>
+              <p><a href="https://github.com/arrsoft312/image-to-gcode/releases/tag/v3.1.1" class="text-reset" target="_blank">Скачать исходный код
+                и программу этой версии с GitHub</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse01" aria-expanded="false" aria-controls="collapse01">
+            <h4 class="accordion-header bi-bookmark" id="heading01"> Репозиторий программы image2gcode на GitHub </h4>
+          </button>
+          <div id="collapse01" class="accordion-collapse collapse" aria-labelledby="heading01">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>2021-09-22</p>
+              <p>Исходный код программы <b>image2gcode</b> доступен на веб-сервисе GitHub:
+                <a href="https://github.com/arrsoft312/image-to-gcode" class="text-reset" target="_blank">https://github.com/arrsoft312/image-to-gcode</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse00" aria-expanded="false" aria-controls="collapse00">
+            <h4 class="accordion-header bi-bookmark" id="heading00"> У программы image2gcode появился веб-сайт: image2gcode.ru </h4>
+          </button>
+          <div id="collapse00" class="accordion-collapse collapse" aria-labelledby="heading00">
+            <div class="accordion-body py-0 mt-3 mb-5">
+              <p>2021-09-07</p>
+              <p>Теперь у программы <b>image2gcode</b> есть свой веб-сайт в Интернете:
+                <a href="https://www.image2gcode.ru/" class="text-reset" target="_blank">https://www.image2gcode.ru</a></p>
+              <p>Сама программа для скачивания будет доступна позже. А сейчас вы можете помочь мне в заполнении страниц
+                <a href="/faq/" class="text-reset">ЧаВо</a> и <a href="/album/" class="text-reset">Галерея</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    
-    <script>
-      const obj = document.getElementById('accordionExample');
-      news.forEach((value, index) => {
-        let s = '<div class="accordion-item">';
-        s += '<button class="accordion-button' + (index != 0 ? ' collapsed' : '') + '" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + index + '" aria-expanded="' + (index == 0) + '" aria-controls="collapse' + index + '">';
-        s += '<h4 class="accordion-header bi-bookmark' + (index == 0 ? '-star' : '') + '" id="heading' + index + '"> ' + value[0] + ' </h4>';
-        s += '</button>';
-        s += '<div id="collapse' + index + '" class="accordion-collapse collapse' + (index == 0 ? ' show' : '') + '" aria-labelledby="heading' + index + '">';
-        s += '<div class="accordion-body py-0 mt-3 mb-5">';
-        for (let i = 1, j = value.length; i < j; ++i) {
-          s += '<p>' + value[i] + '</p>';
-        }
-        s += '</div>';
-        s += '</div>';
-        s += '</div>';
-        obj.innerHTML += s;
-      });
-    </script>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.js" crossorigin="anonymous"></script>
