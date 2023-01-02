@@ -10,14 +10,6 @@
   </head>
   
   <body>
-    <script>
-      const faq = [
-        //[ 'heading', 'body', ],
-        [ 'Что насчет векторной графики?', 'Ничего! Программа предназначена для создания УП из растровых изображений, может быть в будущем появится векторизация.', ],
-        [ 'Программа не запускается на Windows XP', 'Программа может работать и на Windows XP, но для этого вам нужно <a href="/compile/" class="text-reset">скомпилировать</a> ее самостоятельно.', ],
-      ];
-    </script>
-    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-lg">
         <a class="navbar-brand py-0" href="/">
@@ -46,26 +38,42 @@
     <main class="container-lg fs-5">
       <h1 class="mt-5">Частые вопросы</h1>
       
-      <div class="my-5 accordion" id="accordionExample"></div>
+      <div class="my-5 accordion" id="accordionExample">
+        <!--div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseXX" aria-expanded="false" aria-controls="collapseXX">
+            <h5 class="accordion-header" id="headingXX">heading</h5>
+          </button>
+          <div id="collapseXX" class="accordion-collapse collapse" aria-labelledby="headingXX">
+            <div class="accordion-body">
+              <p class="mb-0">body</p>
+            </div>
+          </div>
+        </div-->
+        
+        <div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse01" aria-expanded="false" aria-controls="collapse01">
+            <h5 class="accordion-header" id="heading01">Что насчет векторной графики?</h5>
+          </button>
+          <div id="collapse01" class="accordion-collapse collapse" aria-labelledby="heading01">
+            <div class="accordion-body">
+              <p class="mb-0">Ничего! Программа предназначена для создания УП из растровых изображений, может быть в будущем появится векторизация.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!--div class="accordion-item">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse00" aria-expanded="false" aria-controls="collapse00">
+            <h5 class="accordion-header" id="heading00">Программа не запускается на Windows XP</h5>
+          </button>
+          <div id="collapse00" class="accordion-collapse collapse" aria-labelledby="heading00">
+            <div class="accordion-body">
+              <p class="mb-0">Программа может работать и на Windows XP, но для этого вам нужно <a href="/compile/" class="text-reset">скомпилировать</a>
+                ее самостоятельно.</p>
+            </div>
+          </div>
+        </div-->
+      </div>
     </main>
-    
-    <script>
-      const obj = document.getElementById('accordionExample');
-      faq.forEach((value, index) => {
-        obj.innerHTML += (
-          '<div class="accordion-item">'+
-          '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + index + '" aria-expanded="false" aria-controls="collapse' + index + '">'+
-          '<h5 class="accordion-header" id="heading' + index + '">' + value[0] + '</h5>'+
-          '</button>'+
-          '<div id="collapse' + index + '" class="accordion-collapse collapse" aria-labelledby="heading' + index + '">'+
-          '<div class="accordion-body">'+
-          '<p class="mb-0">' + value[1] + '</p>'+
-          '</div>'+
-          '</div>'+
-          '</div>'
-        );
-      });
-    </script>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.js" crossorigin="anonymous"></script>
